@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     private enum Constants {
         static let rowHeight: CGFloat = 50
-        static let itemsPerRow: CGFloat = 5
+        static let columnsCount: CGFloat = 5
     }
     
     @IBOutlet weak var gridCollectionView: UICollectionView! {
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var gridLayout: GridCollectionViewLayout! {
+    @IBOutlet weak var gridLayout: StickyGridCollectionViewLayout! {
         didSet {
             gridLayout.stickyRowsCount = 1
             gridLayout.stickyColumnsCount = 1
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
 // MARK: - Collection view data source and delegate methods
 
 extension ViewController: UICollectionViewDataSource {
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 100
     }
@@ -48,9 +49,7 @@ extension ViewController: UICollectionViewDataSource {
         }
         
         cell.titleLabel.text = "\(indexPath)"
-        
-        let isStickyCell = indexPath.section == 0 || indexPath.row == 0
-        cell.backgroundColor = isStickyCell ? .lightGray : .white
+		cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .lightGray : .white
         
         return cell
     }
@@ -58,22 +57,8 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let columnWidth = floor(collectionView.bounds.width  / CGFloat(Constants.itemsPerRow))
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let columnWidth = collectionView.bounds.width / CGFloat(Constants.columnsCount)
         return CGSize(width: columnWidth, height: Constants.rowHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
     }
 }

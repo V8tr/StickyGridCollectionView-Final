@@ -10,17 +10,8 @@ import UIKit
 
 // Index Path Section = Row
 // Index Path Row (Item) = Column
-class GridCollectionViewLayout: UICollectionViewFlowLayout {
-    
-    private enum ZOrder {
-        static let stickyItem = 1
-        static let staticStikyItem = 2
-    }
-    
-    private var allAttributes: [[UICollectionViewLayoutAttributes]] = []
-    private var allSizes: [[CGSize]] = []
-    private var contentSize = CGSize.zero
-    
+class StickyGridCollectionViewLayout: UICollectionViewFlowLayout {
+
     var stickyRowsCount = 0 {
         didSet {
             invalidateLayout()
@@ -32,14 +23,10 @@ class GridCollectionViewLayout: UICollectionViewFlowLayout {
             invalidateLayout()
         }
     }
-    
-    private var rowsCount: Int {
-        return collectionView!.numberOfSections
-    }
-    
-    private func columnsCount(in row: Int) -> Int {
-        return collectionView!.numberOfItems(inSection: row)
-    }
+
+	private var allAttributes: [[UICollectionViewLayoutAttributes]] = []
+	private var allSizes: [[CGSize]] = []
+	private var contentSize = CGSize.zero
 
 	// MARK: - Collection view flow layout methods
 
@@ -86,6 +73,18 @@ class GridCollectionViewLayout: UICollectionViewFlowLayout {
     }
 
 	// MARK: - Helpers
+
+	private var rowsCount: Int {
+		return collectionView!.numberOfSections
+	}
+
+	private func columnsCount(in row: Int) -> Int {
+		return collectionView!.numberOfItems(inSection: row)
+	}
+
+	func isItemSticky(at indexPath: IndexPath) -> Bool {
+		return indexPath.item < stickyColumnsCount || indexPath.section < stickyRowsCount
+	}
 
 	private func setupSizesIfNeeded() {
 		guard allSizes.isEmpty else {
@@ -161,6 +160,8 @@ class GridCollectionViewLayout: UICollectionViewFlowLayout {
 		}
 	}
 
+	// MARK: - Sizing
+
 	func size(forRow row: Int, col: Int) -> CGSize {
 		guard let delegate = collectionView?.delegate as? UICollectionViewDelegateFlowLayout else {
 			return .zero
@@ -186,5 +187,12 @@ class GridCollectionViewLayout: UICollectionViewFlowLayout {
 			return 0.0
 		}
 		return delegate.collectionView?(collectionView!, layout: self, minimumInteritemSpacingForSectionAt: row) ?? 0.0
+	}
+
+	// MARK: - ZOrder
+
+	private enum ZOrder {
+		static let stickyItem = 1
+		static let staticStikyItem = 2
 	}
 }
