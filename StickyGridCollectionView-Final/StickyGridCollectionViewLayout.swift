@@ -111,7 +111,7 @@ class StickyGridCollectionViewLayout: UICollectionViewFlowLayout {
 
 	private func zIndex(forRow row: Int, column col: Int) -> Int {
 		if row < stickyRowsCount && col < stickyColumnsCount {
-			return ZOrder.staticStikyItem
+			return ZOrder.staticStickyItem
 		} else if row < stickyRowsCount || col < stickyColumnsCount {
 			return ZOrder.stickyItem
 		} else {
@@ -153,5 +153,5 @@ private extension IndexPath {
 private enum ZOrder {
 	static let commonItem = 0
 	static let stickyItem = 1
-	static let staticStikyItem = 2
+	static let staticStickyItem = 2
 }
