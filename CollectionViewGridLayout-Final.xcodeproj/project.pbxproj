@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7CAAC282163BE0400C9C7A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAC272163BE0400C9C7A6 /* AppDelegate.swift */; };
-		D7CAAC2A2163BE0400C9C7A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAC292163BE0400C9C7A6 /* ViewController.swift */; };
+		D7CAAC2A2163BE0400C9C7A6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAC292163BE0400C9C7A6 /* CollectionViewController.swift */; };
 		D7CAAC2D2163BE0400C9C7A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CAAC2B2163BE0400C9C7A6 /* Main.storyboard */; };
 		D7CAAC2F2163BE0500C9C7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CAAC2E2163BE0500C9C7A6 /* Assets.xcassets */; };
 		D7CAAC322163BE0600C9C7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CAAC302163BE0600C9C7A6 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		D7CAAC242163BE0400C9C7A6 /* CollectionViewGridLayout-Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionViewGridLayout-Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CAAC272163BE0400C9C7A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7CAAC292163BE0400C9C7A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7CAAC292163BE0400C9C7A6 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D7CAAC2C2163BE0400C9C7A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7CAAC2E2163BE0500C9C7A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7CAAC312163BE0600C9C7A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				D7CAAC272163BE0400C9C7A6 /* AppDelegate.swift */,
-				D7CAAC292163BE0400C9C7A6 /* ViewController.swift */,
+				D7CAAC292163BE0400C9C7A6 /* CollectionViewController.swift */,
 				D7CAAC392163BE2D00C9C7A6 /* CollectionViewCell.swift */,
 				D7CAAC3A2163BE2D00C9C7A6 /* StickyGridCollectionViewLayout.swift */,
 				D7CAAC2B2163BE0400C9C7A6 /* Main.storyboard */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7CAAC3C2163BE2D00C9C7A6 /* StickyGridCollectionViewLayout.swift in Sources */,
-				D7CAAC2A2163BE0400C9C7A6 /* ViewController.swift in Sources */,
+				D7CAAC2A2163BE0400C9C7A6 /* CollectionViewController.swift in Sources */,
 				D7CAAC282163BE0400C9C7A6 /* AppDelegate.swift in Sources */,
 				D7CAAC3B2163BE2D00C9C7A6 /* CollectionViewCell.swift in Sources */,
 			);

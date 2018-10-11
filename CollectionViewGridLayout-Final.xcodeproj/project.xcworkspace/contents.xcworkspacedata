@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CollectionViewGridLayout-Final.xcodeproj">
+      location = "self:/Users/vadymb/Projects/CollectionViewGridLayout-Final/CollectionViewGridLayout-Final.xcodeproj">
    </FileRef>
 </Workspace>

@@ -12,7 +12,8 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollectionViewGridLayout_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollectionViewGridLayout_Starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,14 +21,14 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-dX-mna">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="94L-sf-Ygx" customClass="StickyGridCollectionViewLayout" customModule="CollectionViewGridLayout_Final" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="94L-sf-Ygx" customClass="StickyGridCollectionViewLayout" customModule="CollectionViewGridLayout_Starter" customModuleProvider="target">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="lAM-yv-s1K" customClass="CollectionViewCell" customModule="CollectionViewGridLayout_Final" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="lAM-yv-s1K" customClass="CollectionViewCell" customModule="CollectionViewGridLayout_Starter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -43,16 +44,20 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="width" secondItem="lAM-yv-s1K" secondAttribute="width" id="2Ka-Wb-8Fc"/>
-                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="centerX" secondItem="lAM-yv-s1K" secondAttribute="centerX" id="3eY-U4-zfQ"/>
-                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="centerY" secondItem="lAM-yv-s1K" secondAttribute="centerY" id="AFL-m9-FQr"/>
-                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="height" secondItem="lAM-yv-s1K" secondAttribute="height" id="a0U-zO-7L0"/>
+                                            <constraint firstAttribute="trailing" secondItem="AQ5-Vf-wI9" secondAttribute="trailing" id="MKa-N5-bXP"/>
+                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="leading" secondItem="lAM-yv-s1K" secondAttribute="leading" id="RcX-Zf-CdW"/>
+                                            <constraint firstItem="AQ5-Vf-wI9" firstAttribute="top" secondItem="lAM-yv-s1K" secondAttribute="top" id="dv9-JU-F2C"/>
+                                            <constraint firstAttribute="bottom" secondItem="AQ5-Vf-wI9" secondAttribute="bottom" id="ow8-yN-6pt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="titleLabel" destination="AQ5-Vf-wI9" id="GjT-K5-39d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kbH-CA-A3L"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iaf-my-uPd"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,7 +74,6 @@
                         <outlet property="gridLayout" destination="94L-sf-Ygx" id="wtL-J0-lbb"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
