@@ -1,6 +1,6 @@
 //
 //  GridCollectionViewLayout.swift
-//  CollectionViewGridLayout-Starter
+//  StickyGridCollectionView-Final
 //
 //  Created by Vadim Bulavin on 10/1/18.
 //  Copyright © 2018 Vadim Bulavin. All rights reserved.
