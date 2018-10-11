@@ -1,6 +1,6 @@
 //
 //  GridCollectionViewLayout.swift
-//  CollectionViewGridLayout-Final
+//  CollectionViewGridLayout-Starter
 //
 //  Created by Vadim Bulavin on 10/1/18.
 //  Copyright © 2018 Vadim Bulavin. All rights reserved.
@@ -23,6 +23,7 @@ class StickyGridCollectionViewLayout: UICollectionViewFlowLayout {
 	}
 
 	private var allAttributes: [[UICollectionViewLayoutAttributes]] = []
+	private var contentSize = CGSize.zero
 
 	func isItemSticky(at indexPath: IndexPath) -> Bool {
 		return indexPath.item < stickyColumnsCount || indexPath.section < stickyRowsCount
@@ -31,12 +32,15 @@ class StickyGridCollectionViewLayout: UICollectionViewFlowLayout {
 	// MARK: - Collection view flow layout methods
 
 	override var collectionViewContentSize: CGSize {
-		return CGSize(width: 10_000, height: 10_000)
+		return contentSize
 	}
 
 	override func prepare() {
 		setupAttributes()
 		updateStickyItemsPositions()
+
+		let lastItemFrame = allAttributes.last?.last?.frame ?? .zero
+		contentSize = CGSize(width: lastItemFrame.maxX, height: lastItemFrame.maxY)
 	}
 
 	override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
